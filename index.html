@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="description" content="Plataforma web inteligente para comercialización y gestión de ventas de brazos robóticos.">
+  <title>RoboMarket | Brazos Robóticos</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%232dd4bf'/%3E%3Cstop offset='1' stop-color='%233b82f6'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='100' height='100' rx='22' fill='url(%23g)'/%3E%3Ctext x='50' y='70' font-size='58' text-anchor='middle' fill='%2309252a' font-family='Arial' font-weight='bold'%3ER%3C/text%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="loader" id="loader">
+    <div><div class="loader-mark">R</div><p>ROBOMARKET</p></div>
+  </div>
+  <div class="progress-bar" id="progressBar"></div>
+  <div class="bg-grid"></div>
+  <div class="ambient ambient-1"></div>
+  <div class="ambient ambient-2"></div>
+
+  <header class="topbar">
+    <a class="brand" href="#inicio" aria-label="RoboMarket inicio">
+      <span class="brand-mark">R</span>
+      <span><strong>Robo<span>Market</span></strong><small>TECNOLOGÍA ROBÓTICA</small></span>
+    </a>
+
+    <button class="menu-toggle" id="menuToggle" aria-label="Abrir menú">☰</button>
+
+    <nav id="mainNav">
+      <a href="#inicio">Inicio</a>
+      <a href="#productos">Productos</a>
+      <a href="#ventas">Ventas</a>
+      <a href="#nosotros">Proyecto</a>
+      <a href="#ubicacion">Ubicación</a>
+      <a href="#contacto">Contacto</a>
+    </nav>
+
+    <div class="top-actions">
+      <button class="login-btn" id="loginBtn"><span class="avatar-mini" id="authAvatar">👤</span><span id="authLabel">Iniciar sesión</span></button>
+      <button class="icon-btn" id="themeBtn" title="Cambiar tema">◐</button>
+      <button class="cart-btn" id="cartBtn">🛒 <span>Carrito</span><b id="cartCount">0</b></button>
+    </div>
+  </header>
+
+  <div class="marquee" aria-hidden="true">
+    <div class="marquee-track">
+      <span><i>✦</i> &nbsp;ATENCIÓN 24H</span><span><i>✦</i> &nbsp;+25 MODELOS DISPONIBLES</span><span><i>✦</i> &nbsp;VISIÓN ARTIFICIAL</span><span><i>✦</i> &nbsp;ENVÍO A TODO BOLIVIA</span><span><i>✦</i> &nbsp;SOPORTE TÉCNICO</span><span><i>✦</i> &nbsp;GARANTÍA 12 MESES</span>
+      <span><i>✦</i> &nbsp;ATENCIÓN 24H</span><span><i>✦</i> &nbsp;+25 MODELOS DISPONIBLES</span><span><i>✦</i> &nbsp;VISIÓN ARTIFICIAL</span><span><i>✦</i> &nbsp;ENVÍO A TODO BOLIVIA</span><span><i>✦</i> &nbsp;SOPORTE TÉCNICO</span><span><i>✦</i> &nbsp;GARANTÍA 12 MESES</span>
+    </div>
+  </div>
+
+  <main>
+    <section class="hero" id="inicio">
+      <div class="hero-copy reveal">
+        <span class="eyebrow">PLATAFORMA COMERCIAL INTELIGENTE</span>
+        <h1>Automatiza tu futuro con <span class="typed">brazos robóticos</span></h1>
+        <p>
+          Tienda virtual diseñada para consultar modelos, comparar características,
+          proyectar ventas y gestionar solicitudes de compra desde una experiencia
+          digital moderna, interactiva y adaptable.
+        </p>
+        <div class="hero-buttons">
+          <a class="btn primary" href="#productos">Explorar catálogo <span>→</span></a>
+          <a class="btn ghost" href="#ventas">Ver proyección</a>
+        </div>
+        <div class="hero-rating">
+          <span>★ 4.9</span> &nbsp;·&nbsp; +120 empresas confían en RoboMarket
+        </div>
+        <div class="hero-stats">
+          <div><strong data-counter="25">0</strong><span>modelos disponibles</span></div>
+          <div><strong data-counter="98">0</strong><span>% satisfacción</span></div>
+          <div><strong data-counter="24">0</strong><span>h atención</span></div>
+        </div>
+      </div>
+
+      <div class="hero-visual reveal">
+        <div class="orbital orbit-a"></div>
+        <div class="orbital orbit-b"></div>
+        <div class="robot-stage" data-tilt>
+          <div class="robot-glow"></div>
+          <div class="robot">
+            <div class="base"></div>
+            <div class="joint j1"></div>
+            <div class="arm a1"></div>
+            <div class="joint j2"></div>
+            <div class="arm a2"></div>
+            <div class="joint j3"></div>
+            <div class="wrist"></div>
+            <div class="gripper"><i></i><i></i></div>
+          </div>
+          <div class="stage-label">ROBOTIC ARM <b>AI</b></div>
+        </div>
+        <div class="floating-card fc-1"><b>+18.4%</b><small>proyección mensual</small></div>
+        <div class="floating-card fc-2"><b>IA</b><small>clasificación inteligente</small></div>
+      </div>
+    </section>
+
+    <section class="quick-info reveal">
+      <article><span>⚡</span><div><strong>Respuesta rápida</strong><small>Atención comercial digital</small></div></article>
+      <article><span>🛡</span><div><strong>Compra segura</strong><small>Información clara del producto</small></div></article>
+      <article><span>📊</span><div><strong>Gestión de ventas</strong><small>Datos y proyecciones</small></div></article>
+      <article><span>🤖</span><div><strong>Soluciones industriales</strong><small>Automatización adaptable</small></div></article>
+    </section>
+
+    <section class="trust-strip reveal">
+      <div><span>🏆</span><b>Certificación ISO 9001</b><small>Calidad garantizada</small></div>
+      <div><span>🔒</span><b>Compra segura</b><small>Datos protegidos</small></div>
+      <div><span>🚚</span><b>Envíos nacionales</b><small>Entrega coordinada</small></div>
+      <div><span>🤝</span><b>Soporte técnico</b><small>Atención 24/7</small></div>
+    </section>
+
+    <section class="section" id="productos">
+      <div class="section-head reveal">
+        <div>
+          <span class="eyebrow">CATÁLOGO DIGITAL</span>
+          <h2>Encuentra el brazo ideal</h2>
+          <p>Explora productos, características y precios estimados.</p>
+        </div>
+        <div class="catalog-tools">
+          <input id="searchInput" type="search" placeholder="Buscar producto...">
+          <select id="filterSelect">
+            <option value="all">Todos</option>
+            <option value="industrial">Industrial</option>
+            <option value="vision">Visión artificial</option>
+            <option value="collaborative">Colaborativo</option>
+          </select>
+        </div>
+      </div>
+      <div class="offer-chip reveal" id="offerChip">
+        <span>🔥 Oferta de lanzamiento</span><b id="countdown">05:59:59</b><small>descuentos hasta el 20% en modelos seleccionados</small>
+      </div>
+
+      <div class="products-grid" id="productsGrid"></div>
+    </section>
+
+    <section class="section sales-section" id="ventas">
+      <div class="section-head reveal">
+        <div>
+          <span class="eyebrow">INTELIGENCIA COMERCIAL</span>
+          <h2>Proyección de ventas</h2>
+          <p>Una vista demostrativa para analizar el comportamiento comercial del proyecto.</p>
+        </div>
+      </div>
+      <div class="dashboard">
+        <div class="dash-card main-chart">
+          <div class="dash-top"><span>Ventas proyectadas</span><b>2026</b></div>
+          <div class="big-number">Bs. <span id="salesTotal">184,500</span></div>
+          <div class="trend">↗ +18.4% <small>vs. periodo anterior</small></div>
+          <div class="bars" id="bars"></div>
+          <div class="months"><span>Ene</span><span>Feb</span><span>Mar</span><span>Abr</span><span>May</span><span>Jun</span><span>Jul</span></div>
+        </div>
+        <div class="dash-card">
+          <span class="dash-label">Meta comercial</span>
+          <div class="progress"><i style="width:76%"></i></div>
+          <strong class="progress-value">76%</strong>
+          <p>Avance estimado de la meta anual.</p>
+          <button class="btn small primary" id="projectionBtn">Simular escenario</button>
+        </div>
+        <div class="dash-card metrics">
+          <div><span>Pedidos</span><strong>126</strong></div>
+          <div><span>Ticket promedio</span><strong>Bs. 1,464</strong></div>
+          <div><span>Conversión</span><strong>7.8%</strong></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section project-section" id="nosotros">
+      <div class="project-card reveal">
+        <div>
+          <span class="eyebrow">SOBRE EL PROYECTO</span>
+          <h2>Una experiencia digital para modernizar la comercialización.</h2>
+          <p>
+            La plataforma centraliza el catálogo, información técnica, solicitudes de compra,
+            contacto, ubicación y análisis básico de ventas. Su objetivo es facilitar la toma
+            de decisiones comerciales mediante una interfaz visual, responsive e interactiva.
+          </p>
+          <div class="feature-list">
+            <span>✓ Catálogo interactivo</span><span>✓ Carrito de compra</span>
+            <span>✓ Proyección comercial</span><span>✓ Diseño responsive</span>
+          </div>
+        </div>
+        <div class="mini-3d" data-tilt>
+          <div class="cube">
+            <span>WEB</span><span>3D</span><span>IA</span><span>VENTAS</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section location-grid" id="ubicacion">
+      <div class="location-copy reveal">
+        <span class="eyebrow">VISÍTANOS</span>
+        <h2>Información de atención</h2>
+        <p>La misma lógica de la página de referencia, adaptada a la comercialización de brazos robóticos.</p>
+        <div class="info-list">
+          <div><b>🕐 Horarios</b><span>Lunes a sábado: 08:00 – 18:00</span><span>Domingos: 09:00 – 13:00</span></div>
+          <div><b>📍 Dirección</b><span>Viacha - La Paz, Bolivia</span><span>Atención comercial y demostraciones con previa coordinación.</span></div>
+          <div><b>☎ Contacto</b><span>60514977</span><span>ventas@robomarket.bo</span></div>
+        </div>
+      </div>
+      <div class="map-card">
+        <iframe
+          title="Mapa de La Paz, Bolivia"
+          src="https://maps.google.com/maps?q=Viacha%2C%20La%20Paz%2C%20Bolivia&t=&z=13&ie=UTF8&iwloc=&output=embed"
+          loading="lazy"></iframe>
+        <a class="map-link" href="https://www.google.com/maps/place/Viacha,+La+Paz,+Bolivia" target="_blank" rel="noopener">Abrir mapa ↗</a>
+      </div>
+    </section>
+
+    <section class="section contact-section" id="contacto">
+      <div class="contact-card reveal">
+        <div>
+          <span class="eyebrow">CONTACTO COMERCIAL</span>
+          <h2>Solicita información o una cotización</h2>
+          <p>Completa el formulario y se preparará una solicitud de contacto.</p>
+        </div>
+        <form id="contactForm">
+          <div class="form-row">
+            <label>Nombre<input required name="name" placeholder="Tu nombre"></label>
+            <label>Correo<input required type="email" name="email" placeholder="correo@ejemplo.com"></label>
+          </div>
+          <label>Interés
+            <select name="interest">
+              <option>Brazo industrial</option><option>Brazo con visión artificial</option>
+              <option>Brazo colaborativo</option><option>Distribución / venta</option>
+            </select>
+          </label>
+          <label>Mensaje<textarea required name="message" rows="4" placeholder="Cuéntanos qué necesitas..."></textarea></label>
+          <button class="btn primary" type="submit">Enviar solicitud →</button>
+          <p class="form-message" id="formMessage"></p>
+        </form>
+      </div>
+    </section>
+
+    <section class="section testimonials-section" id="testimonios">
+      <div class="section-head reveal">
+        <div>
+          <span class="eyebrow">CLIENTES</span>
+          <h2>Lo que dicen de nosotros</h2>
+          <p>Opiniones de quienes ya automatizaron sus procesos con la plataforma.</p>
+        </div>
+      </div>
+      <div class="testimonial-slider">
+        <figure class="t-slide reveal">
+          <span class="t-star">★★★★★</span>
+          <blockquote>Reducimos el tiempo de empaque a la mitad. La proyección de ventas nos ayudó a planificar mejor el año.</blockquote>
+          <figcaption><b>Ing. Carla Mendoza</b><span>Planta Industrial · La Paz</span></figcaption>
+        </figure>
+        <figure class="t-slide reveal">
+          <span class="t-star">★★★★★</span>
+          <blockquote>El sistema con visión artificial superó nuestras expectativas. La solicitud de cotización fue rápida y clara.</blockquote>
+          <figcaption><b>Marcos Loza</b><span>Spin One Technologies</span></figcaption>
+        </figure>
+        <figure class="t-slide reveal">
+          <span class="t-star">★★★★★</span>
+          <blockquote>Excelente asesoría y soporte. Comprar un brazo colaborativo por la web fue fácil y seguro.</blockquote>
+          <figcaption><b>Valeria Ríos</b><span>Laboratorio Químico CBBA</span></figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="cta-banner reveal">
+      <div class="cta-glow"></div>
+      <div>
+        <span class="eyebrow">¿LISTO PARA AUTOMATIZAR?</span>
+        <h2>Lleva tu producción al siguiente nivel</h2>
+        <p>Asesórate gratis con nuestro equipo y encuentra el brazo robótico ideal para tu proceso.</p>
+      </div>
+      <div class="cta-actions">
+        <a class="btn primary" href="https://wa.me/59160514977?text=Hola%2C%20quiero%20una%20asesor%C3%ADa%20para%20automatizar%20mi%20proceso." target="_blank" rel="noopener">Asesoría gratis →</a>
+        <a class="btn ghost" href="#productos">Ver catálogo</a>
+      </div>
+    </section>
+
+    <section class="section newsletter-section" id="newsletter">
+      <div class="newsletter-card reveal">
+        <div>
+          <span class="eyebrow">NEWSLETTER</span>
+          <h2>Recibe ofertas y novedades</h2>
+          <p>Suscríbete para recibir nuevos modelos, promociones y consejos de automatización.</p>
+        </div>
+        <form class="newsletter-form" id="newsletterForm">
+          <input type="email" required placeholder="tu@correo.com" aria-label="Tu correo">
+          <button class="btn primary" type="submit">Suscribirme</button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <span class="brand-mark">R</span>
+        <div><strong>RoboMarket</strong><small>Plataforma comercial de robótica</small></div>
+        <p class="footer-desc">Tecnología y automatización para la industria boliviana. Descubre, compara y cotiza brazos robóticos desde la web.</p>
+        <div class="social">
+          <a href="#" aria-label="Facebook">f</a>
+          <a href="#" aria-label="Instagram">📷</a>
+          <a href="#" aria-label="X">𝕏</a>
+          <a href="#" aria-label="YouTube">▶</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Navegación</h4>
+        <a href="#inicio">Inicio</a>
+        <a href="#productos">Productos</a>
+        <a href="#ventas">Ventas</a>
+        <a href="#ubicacion">Ubicación</a>
+        <a href="#contacto">Contacto</a>
+      </div>
+      <div class="footer-col">
+        <h4>Contacto</h4>
+        <span>📍 La Paz, Bolivia</span>
+        <span>☎ 60514977</span>
+        <span>✉ ventas@robomarket.bo</span>
+        <a class="btn small primary" href="#contacto" style="margin-top:8px">Cotizar ahora →</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© M@rtin 2026 RoboMarket · Proyecto académico de plataforma web inteligente.</p>
+      <a class="whatsapp" href="https://wa.me/59160514977?text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20los%20brazos%20rob%C3%B3ticos." target="_blank" rel="noopener">WhatsApp ↗</a>
+    </div>
+  </footer>
+
+  <button class="to-top" id="toTop" aria-label="Volver arriba">↑</button>
+  <div class="toast" id="toast"></div>
+
+  <a class="whatsapp-float" href="https://wa.me/59160514977?text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20los%20brazos%20rob%C3%B3ticos." target="_blank" rel="noopener" aria-label="Chat de WhatsApp">
+    <svg viewBox="0 0 24 24" role="img" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.52.149-.174.198-.298.297-.497.1-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+  </a>
+
+  <div class="modal" id="loginModal">
+    <div class="modal-box login-box" id="loginBox">
+      <div class="login-bg-effects">
+        <div class="login-particles" id="loginParticles"></div>
+        <div class="login-ring"></div>
+        <div class="login-ring r2"></div>
+        <div class="login-ring r3"></div>
+        <div class="aurora au-1"></div>
+        <div class="aurora au-2"></div>
+      </div>
+      <button class="modal-close" id="loginClose" aria-label="Cerrar">×</button>
+      <div class="login-card">
+        <div class="lc-avatar-wrap">
+          <span class="lc-halo"></span>
+          <button type="button" class="lc-avatar" id="lcRobot" title="¡Hazme clic!" aria-label="Mascota RoboMarket">
+            <span class="lca-antenna"></span>
+            <i class="eye"></i><i class="eye"></i>
+            <b class="mouth"></b>
+            <span class="lc-bubble" id="lcBubble">¡Hola! 👋</span>
+          </button>
+        </div>
+        <div class="login-header">
+          <span class="login-badge" id="loginBadge">Bienvenido de vuelta</span>
+          <h4>Iniciar sesión</h4>
+          <p class="lm-sub">Accede a tu panel de control de RoboMarket</p>
+        </div>
+        <form id="loginForm" novalidate>
+          <div class="field-group">
+            <label for="loginEmail" class="field-label">Usuario o correo</label>
+            <div class="field-wrapper" id="emailWrap">
+              <span class="f-ico">✉</span>
+              <input type="email" id="loginEmail" required placeholder="tu@correo.com" autocomplete="username" spellcheck="false">
+              <span class="f-check" aria-hidden="true">✓</span>
+              <span class="field-focus-border"></span>
+            </div>
+          </div>
+          <div class="field-group">
+            <div class="fl-row">
+              <label for="loginPass" class="field-label">Contraseña</label>
+              <a href="#" class="forgot-link" id="forgotLink">¿Olvidaste?</a>
+            </div>
+            <div class="field-wrapper" id="passWrap">
+              <span class="f-ico">🔒</span>
+              <input type="password" id="loginPass" required placeholder="••••••••" autocomplete="current-password" spellcheck="false">
+              <button type="button" class="pw-toggle" id="pwToggle" aria-label="Mostrar/ocultar contraseña">👁</button>
+              <span class="field-focus-border"></span>
+            </div>
+            <div class="strength-meter" id="strengthMeter">
+              <div class="sm-bars"><i></i><i></i><i></i><i></i></div>
+              <small id="strengthLabel"></small>
+            </div>
+            <p class="caps-hint" id="capsHint">⚠ Bloq Mayús está activado</p>
+          </div>
+          <div class="remember-row">
+            <label class="remember"><input type="checkbox" id="rememberChk" checked><span class="r-box"></span><span class="r-txt">Recordarme</span></label>
+          </div>
+          <p class="login-msg" id="loginMsg" aria-live="polite"></p>
+          <button class="btn primary login-submit" id="loginSubmit" type="submit">
+            <span class="btn-text">Iniciar sesión</span>
+            <span class="btn-arrow">→</span>
+            <span class="btn-loader"><span class="spinner"></span></span>
+            <span class="btn-shine"></span>
+          </button>
+        </form>
+        <div class="demo-chips">
+          <b>⚡ Acceso rápido:</b>
+          <button type="button" class="demo-cred chip-btn" data-e="admin@robomarket.bo" data-p="admin123" data-role="admin"><span class="demo-ico">👑</span>Admin</button>
+          <button type="button" class="demo-cred chip-btn" data-e="usuario@robomarket.bo" data-p="user123" data-role="user"><span class="demo-ico">👤</span>Usuario</button>
+        </div>
+        <div class="login-footer">
+          <p>¿No tienes cuenta? <a href="#" id="registerLink">Solicita acceso</a></p>
+        </div>
+      </div>
+      <div class="login-success" id="loginSuccess">
+        <svg viewBox="0 0 52 52" aria-hidden="true"><circle cx="26" cy="26" r="24"/><path d="M15 27l7 7 15-16"/></svg>
+        <b>¡Acceso concedido!</b><small>Ingresando al panel...</small>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal" id="prodModal">
+    <div class="modal-box">
+      <button class="modal-close" id="prodClose">×</button>
+      <span class="eyebrow">EDITAR PRODUCTO</span>
+      <h3 style="font:600 22px 'Space Grotesk';margin:8px 0 18px">Modificar datos del producto</h3>
+      <form id="prodEditForm" class="edit-form">
+        <label>Nombre<input required name="name" placeholder="Nombre del producto"></label>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px">
+          <label>Tipo
+            <select name="type"><option value="vision">Visión artificial</option><option value="industrial">Industrial</option><option value="collaborative">Colaborativo</option></select>
+          </label>
+          <label>Precio (Bs.)<input required name="price" type="number" min="1" placeholder="0"></label>
+        </div>
+        <label>Etiqueta<input name="tag" placeholder="Ej. NUEVO, OFERTA..."></label>
+        <label>Descripción<textarea name="desc" rows="2" placeholder="Descripción corta..."></textarea></label>
+        <div style="display:flex;gap:10px;margin-top:4px">
+          <button class="btn primary" type="submit" style="flex:1">Guardar cambios ✓</button>
+          <button class="btn ghost" type="button" id="prodCancel">Cancelar</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <div class="modal" id="userModal">
+    <div class="modal-box">
+      <button class="modal-close" id="userClose">×</button>
+      <span class="eyebrow">GESTIÓN DE USUARIOS</span>
+      <h3 style="font:600 22px 'Space Grotesk',sans-serif;margin:8px 0 18px" id="userModalTitle">Nuevo usuario</h3>
+      <form id="userEditForm" class="edit-form">
+        <input type="hidden" name="origEmail">
+        <label>Nombre completo<input required name="name" placeholder="Nombre y apellido"></label>
+        <label>Correo electrónico<input required type="email" name="email" placeholder="correo@ejemplo.com" spellcheck="false"></label>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px">
+          <label>Rol<select name="role"><option value="user">Usuario</option><option value="admin">Administrador</option></select></label>
+          <label>Contraseña<input type="password" name="pass" placeholder="(sin cambios)" autocomplete="new-password"></label>
+        </div>
+        <p class="login-msg" id="userMsg" aria-live="polite"></p>
+        <div style="display:flex;gap:10px;margin-top:4px">
+          <button class="btn primary" type="submit" style="flex:1" id="userSaveBtn">Crear usuario ✓</button>
+          <button class="btn ghost" type="button" id="userCancel">Cancelar</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <div class="dashboard-view" id="dashboardView">
+    <aside class="dash-side">
+      <div class="dash-side-header">
+        <a href="#inicio" class="dash-brand"><span class="brand-mark">R</span><strong>RoboMarket<small>PANEL DE CONTROL</small></strong></a>
+        <button class="dash-side-close" id="dashSideClose" aria-label="Cerrar menú">×</button>
+      </div>
+      <div class="dash-user">
+        <span class="dash-avatar" id="dashAvatar">A</span>
+        <div><b id="dashName"></b><i class="role-badge" id="dashRole"></i></div>
+      </div>
+      <div class="dash-quick-stats" id="dashQuickStats"></div>
+      <nav class="dash-menu" id="dashMenu"></nav>
+      <div class="dash-side-footer">
+        <div class="dash-footer-row">
+          <div class="dash-version">v2.1.0</div>
+          <button class="icon-btn dash-collapse-btn" id="dashCollapseBtn" title="Contraer menú">«</button>
+        </div>
+        <button class="dash-logout" id="logoutBtn">⏻ Cerrar sesión</button>
+      </div>
+    </aside>
+    <main class="dash-main">
+      <header class="dash-topbar">
+        <div class="dash-topbar-left">
+          <button class="icon-btn dash-toggle-btn" id="dashToggleBtn" aria-label="Abrir menú">☰</button>
+          <h2 id="dashTitle">Resumen</h2>
+          <span class="dash-breadcrumb" id="dashBreadcrumb"></span>
+        </div>
+        <div class="dash-topbar-right">
+          <span class="dash-clock" id="dashClock" title="Hora local"></span>
+          <div class="dash-search" id="dashSearchWrap">
+            <span class="search-ico">🔍</span>
+            <input type="search" id="dashSearchInput" placeholder="Buscar en el panel..." aria-label="Buscar en el panel">
+            <kbd>Ctrl K</kbd>
+          </div>
+          <span class="dash-live"><i></i><span>Sesión activa</span></span>
+          <button class="icon-btn" id="dashThemeBtn" title="Cambiar tema">◐</button>
+          <div class="dash-notifications" id="dashNotifications">
+            <button class="icon-btn notify-btn" id="notifyBtn" aria-label="Notificaciones">
+              <span class="notify-ico">🔔</span>
+              <span class="notify-badge" id="notifyBadge">3</span>
+            </button>
+            <div class="notify-dropdown" id="notifyDropdown">
+              <div class="notify-head"><h4>Notificaciones</h4><button class="notify-clear" id="notifyClear">Marcar todas</button></div>
+              <div class="notify-list" id="notifyList"></div>
+            </div>
+          </div>
+          <div class="dash-user-menu" id="dashUserMenu">
+            <button class="user-menu-btn" id="userMenuBtn" aria-label="Menú de usuario">
+              <span class="dash-avatar user-menu-avatar" id="userMenuAvatar">A</span>
+            </button>
+            <div class="user-dropdown" id="userDropdown">
+              <div class="user-info"><b id="userMenuName"></b><small id="userMenuEmail"></small></div>
+              <hr>
+              <a href="#" class="user-dd-item" id="ddPerfil">👤 Mi perfil</a>
+              <a href="#" class="user-dd-item" id="ddConfig">⚙ Configuración</a>
+              <hr>
+              <button class="user-dd-item logout" id="ddLogout">⏻ Cerrar sesión</button>
+            </div>
+          </div>
+        </div>
+      </header>
+      <div class="dash-content" id="dashContent"></div>
+    </main>
+    <div class="dash-overlay" id="dashOverlay"></div>
+  </div>
+
+  <aside class="cart-panel" id="cartPanel">
+    <div class="cart-head"><h3>Tu carrito</h3><button id="closeCart">×</button></div>
+    <div id="cartItems" class="cart-items"><p class="empty">Tu carrito está vacío.</p></div>
+    <div class="cart-bottom"><div>Total estimado <strong id="cartTotal">Bs. 0</strong></div><button class="btn primary" id="checkoutBtn">Solicitar cotización</button></div>
+  </aside>
+  <div class="overlay" id="overlay"></div>
+
+  <div class="modal" id="productModal">
+    <div class="modal-box"><button class="modal-close" id="modalClose">×</button><div id="modalContent"></div></div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
